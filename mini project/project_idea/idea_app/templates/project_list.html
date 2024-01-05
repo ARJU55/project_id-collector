@@ -1,0 +1,35 @@
+<style>
+    .section {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .href {
+        color: blue;
+        text-decoration: underline;
+        cursor: pointer;
+        padding:0;
+        margin:0;
+    }
+  </style>
+
+<div>
+
+{% for project in projects %}
+<div class="section">
+
+  <h2>{{ project.Title_of_theproject }}</h2>
+  <p>{{ project.Description }}</p>
+  <p>{{ project.syllabus }}</p>
+  <p>{{ project.course }}</p>
+  <p>{{ project.Tech }}</p>
+  
+  <p>{{ project.Description }}</p>
+  <a href="{% url 'view' project.id %}">View</a>
+  <a href="{% url 'download' project.id %}">Download</a>
+
+</div>
+  <!-- Add more fields as needed -->
+{% endfor %}
+
+</div>
